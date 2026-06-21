@@ -57,14 +57,6 @@ h1 {
   line-height: 1;
 }
 
-.subtitle {
-  margin: 0.8rem auto 0;
-  max-width: 26rem;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
 .lines {
   display: grid;
   gap: 1rem;

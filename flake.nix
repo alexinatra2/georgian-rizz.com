@@ -37,11 +37,9 @@
               mkdir -p "$out/assets"
 
               title="$(yq -r '.title' "$src/content/pickup-lines.yaml")"
-              subtitle="$(yq -r '.subtitle' "$src/content/pickup-lines.yaml")"
               yq -o=json '.pickup_lines' "$src/content/pickup-lines.yaml" > "$TMPDIR/pickup-lines.json"
 
               export TITLE="$title"
-              export SUBTITLE="$subtitle"
               export PICKUP_LINES_JSON="$TMPDIR/pickup-lines.json"
               export TEMPLATE="$src/site/index.html"
               export OUTPUT_HTML="$out/index.html"
@@ -62,7 +60,6 @@
                   Path(os.environ["TEMPLATE"])
                   .read_text()
                   .replace("__TITLE__", html.escape(os.environ["TITLE"]))
-                  .replace("__SUBTITLE__", html.escape(os.environ["SUBTITLE"]))
                   .replace("__PICKUP_LINES__", cards)
               )
 
